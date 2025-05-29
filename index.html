@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kritiya - Custom T-shirts & Kurtas for Gen Z</title>
+    <meta name="description" content="Kritiya: Custom T-shirts & Kurtas for Gen Z. Design your own style, fast delivery, premium quality.">
+    <meta name="theme-color" content="#6c5ce7">
+    
+    <!-- SEO and Social Media Meta Tags -->
+    <meta property="og:title" content="Kritiya - Express Your Unique Style">
+    <meta property="og:description" content="Custom T-shirts & Kurtas designed by you, crafted by us. Perfect for Gen Z who dare to be different.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://kritiya.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="keywords" content="custom t-shirts, custom kurtas, personalized clothing, gen z fashion, india fashion">
+    <meta name="author" content="Kritiya Fashion">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://kritiya.com">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    
+    <!-- Preconnect to resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" as="style">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Modernizr for feature detection -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Critical rendering path CSS */
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fd79a8;
+            --dark-color: #2d3436;
+            --light-color: #ddd6fe;
+            --navbar-bg-opacity: 0.1;
+            --navbar-blur: 10px;
+        }
+        
+        /* Default to dark theme */
+        html {
+            background: #1a1a1a;
+            color: #ffffff;
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        /* Theme transition */
+        .theme-transition * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+        }
+        
+        /* Enhanced navbar with dynamic properties and transparency */
+        .navbar {
+            background: rgba(26, 26, 26, var(--navbar-bg-opacity, 0.1)) !important;
+            backdrop-filter: blur(var(--navbar-blur, 10px));
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar.navbar-transparent {
+            background: rgba(0, 0, 0, 0.05) !important;
+            backdrop-filter: blur(5px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02) !important;
+        }
+        
+        .navbar.navbar-semi-transparent {
+            background: rgba(26, 26, 26, 0.3) !important;
+            backdrop-filter: blur(15px) !important;
+        }
+        
+        .navbar.navbar-hidden {
+            transform: translateY(-100%);
+            opacity: 0.8;
+        }
+        
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        
+        .loader-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .loader-logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .loader-logo i {
+            margin-right: 0.5rem;
+        }
+        
+        .loader-progress {
+            width: 200px;
+            height: 4px;
+            background: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .loader-bar {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 4px;
+            animation: loading 3s ease-in-out forwards;
+        }
+        
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+    </style>
+    
+    <!-- Theme initialization script - run immediately -->
+    <script>
+        // Initialize theme immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('kritiya-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "Kritiya",
+        "description": "Custom T-shirts & Kurtas for Gen Z",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+        "url": "https://kritiya.com",
+        "telephone": "+91 91426 19991",
+        "email": "kritiya.contact@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Btm Layout 1st stage",
+            "addressLocality": "Bengaluru",
+            "addressRegion": "Karnataka",
+            "postalCode": "560076",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "12.9162",
+            "longitude": "77.6116"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday", "Tuesday", "Wednesday", "Thursday", 
+                "Friday", "Saturday"
+            ],
+            "opens": "10:00",
+            "closes": "20:00"
+        },
+        "priceRange": "₹499 - ₹1999",
+        "sameAs": [
+            "https://www.facebook.com/kritiyafashion",
+            "https://www.instagram.com/kritiyafashion",
+            "https://twitter.com/kritiyafashion"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Custom Clothing",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Custom T-shirts",
+                        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Product",
+                        "name": "Custom Kurtas",
+                        "image": "https://images.unsplash.com/photo-1564257577154-75fd5ac5c4bb"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Accessibility skip link -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Enhanced Loader with Animation -->
+    <div class="page-loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 5C13.5 5 6 10 6 20C6 30 13.5 35 20 35C26.5 35 34 30 34 20C34 10 26.5 5 20 5Z" stroke="#6c5ce7" stroke-width="2"/>
+                    <path class="shirt-path" d="M15 12V25M25 12V25M15 12H25M15 18H25" stroke="#fd79a8" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Kritiya</span>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+            <p class="mt-3 loading-text">Loading awesome stuff...</p>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <svg class="logo-svg" width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 5C13.5 5 6 10 6 20C6 30 13.5 35 20 35C26.5 35 34 30 34 20C34 10 26.5 5 20 5Z" stroke="currentColor" stroke-width="2"/>
+                    <path class="shirt-path" d="M15 12V25M25 12V25M15 12H25M15 18H25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                Kritiya
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#customize">Customize</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light ms-2" href="#customize">
+                            <i class="fas fa-palette me-1"></i>Design Now
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax and SVG Wave -->
+    <section id="home" class="hero-section" aria-label="Welcome section">
+        <div class="cyber-grid"></div>
+        <div class="hero-particles" id="particles-js"></div>
+        <div class="hero-overlay"></div>
+        <div class="container h-100 d-flex align-items-center">
+            <div class="row w-100">
+                <div class="col-lg-6">
+                    <div class="hero-content" id="main-content">
+                        <h1 class="hero-title" tabindex="0">Express Your <span class="neon-text glitch">Unique Style</span></h1>
+                        <p class="hero-subtitle">Custom T-shirts & Kurtas designed by you, crafted by us. Perfect for Gen Z who dare to be different. 🔥</p>
+                        <div class="hero-buttons">
+                            <a href="#products" class="btn btn-primary btn-lg me-3 ripple">
+                                <i class="fas fa-shopping-bag me-2"></i>Shop Now
+                                <span class="btn-overlay"></span>
+                            </a>
+                            <a href="#customize" class="btn btn-cyber btn-lg ripple">
+                                <i class="fas fa-paint-brush me-2"></i>Customize
+                                <span class="btn-overlay"></span>
+                            </a>
+                        </div>
+                        <div class="hero-stats mt-4 glass-effect p-4" data-animate="fade-up">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h3 class="counter-value neon-text" data-count="5000">0</h3>
+                                    <p>Happy Customers</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter-value neon-text" data-count="500">0</h3>
+                                    <p>Designs Created</p>
+                                </div>
+                                <div class="col-4">
+                                    <h3 class="counter-value neon-text" data-count="48">0</h3>
+                                    <p>Hours Delivery</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="floating-card card-1 glass-effect">
+                            <div class="trending-badge">🔥 Trending</div>
+                            <picture>
+                                <source srcset="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=400&fit=crop&fm=webp" type="image/webp">
+                                <source srcset="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=400&fit=crop" type="image/jpeg"> 
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=400&fit=crop" 
+                                     alt="Custom T-shirt Design" loading="lazy">
+                            </picture>
+                        </div>
+                        <div class="floating-card card-2 glass-effect">
+                            <div class="sale-badge">50% OFF</div>
+                            <picture>
+                                <source srcset="https://images.unsplash.com/photo-1564257577154-75fd5ac5c4bb?w=300&h=400&fit=crop&fm=webp" type="image/webp">
+                                <source srcset="https://images.unsplash.com/photo-1564257577154-75fd5ac5c4bb?w=300&h=400&fit=crop" type="image/jpeg">
+                                <img src="https://images.unsplash.com/photo-1564257577154-75fd5ac5c4bb?w=300&h=400&fit=crop" 
+                                     alt="Custom Kurta Design" loading="lazy">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Enhanced SVG Wave -->
+        <svg class="hero-wave" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#6c5ce7"/>
+                    <stop offset="50%" style="stop-color:#a29bfe"/>
+                    <stop offset="100%" style="stop-color:#fd79a8"/>
+                </linearGradient>
+            </defs>
+            <path class="wave-path" fill="url(#waveGradient)" fill-opacity="0.1" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,117.3C672,107,768,85,864,85.3C960,85,1056,107,1152,117.3C1248,128,1344,128,1392,128L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            <path class="wave-path" fill="white" fill-opacity="1" d="M0,96L48,101.3C96,107,192,117,288,122.7C384,128,480,128,576,122.7C672,117,768,107,864,101.3C960,96,1056,96,1152,101.3C1248,107,1344,117,1392,122.7L1440,128L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+        </svg>
+    </section>
+
+    <!-- Enhanced Products Section -->
+    <section id="products" class="products-section py-5" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our <span class="text-gradient holographic">Epic Collections</span> 🚀</h2>
+                <p class="section-subtitle">Discover fire designs that match your vibe ✨</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4" data-animate="fade-right">
+                    <div class="product-category-card">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=400&fit=crop" alt="Custom T-shirts" class="img-fluid">
+                            <div class="category-overlay">
+                                <div class="category-content">
+                                    <h3>Custom T-Shirts</h3>
+                                    <p>Express yourself with unique designs</p>
+                                    <a href="#" class="btn btn-outline-light">Explore Collection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4" data-animate="fade-left">
+                    <div class="product-category-card">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1564257577154-75fd5ac5c4bb?w=600&h=400&fit=crop" alt="Custom Kurtas" class="img-fluid">
+                            <div class="category-overlay">
+                                <div class="category-content">
+                                    <h3>Custom Kurtas</h3>
+                                    <p>Traditional meets modern design</p>
+                                    <a href="#" class="btn btn-outline-light">Explore Collection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Featured Products -->
+            <div class="featured-products mt-5">
+                <h3 class="text-center mb-4 neon-text">🔥 Trending Now</h3>
+                
+                <!-- T-Shirts Section -->
+                <div class="product-category-header mb-4">
+                    <h4 class="text-primary"><i class="fas fa-tshirt me-2"></i>Custom T-Shirts</h4>
+                </div>
+                <div class="row product-grid mb-5">
+                    <div class="col-md-3 col-sm-6 mb-4 product-item hover-lift" data-category="tshirt" data-price="799">
+                        <div class="product-card glass-effect">
+                            <div class="trending-badge">🔥 Hot</div>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=300&h=300&fit=crop" 
+                                     alt="Minimal Geometric Tee" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-light quick-view-btn" data-product-id="1">
+                                        <i class="fas fa-eye me-1"></i>Quick View
+                                    </button>
+                                    <button class="btn btn-primary add-to-cart-btn" data-product-id="1">
+                                        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Minimal Geometric Tee</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="text-muted">(24 reviews)</span>
+                                </div>
+                                <p class="price">₹799 <span class="original-price">₹999</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item hover-lift" data-category="tshirt" data-price="649">
+                        <div class="product-card glass-effect">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop" 
+                                     alt="Urban Street Style Tee" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-light quick-view-btn" data-product-id="2">
+                                        <i class="fas fa-eye me-1"></i>Quick View
+                                    </button>
+                                    <button class="btn btn-primary add-to-cart-btn" data-product-id="2">
+                                        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Urban Street Style Tee</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <span class="text-muted">(18 reviews)</span>
+                                </div>
+                                <p class="price">₹649</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item hover-lift" data-category="tshirt" data-price="899">
+                        <div class="product-card glass-effect">
+                            <div class="sale-badge">New</div>
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1583743814966-8936f37f4036?w=300&h=300&fit=crop" 
+                                     alt="Vintage Typography Tee" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-light quick-view-btn" data-product-id="3">
+                                        <i class="fas fa-eye me-1"></i>Quick View
+                                    </button>
+                                    <button class="btn btn-primary add-to-cart-btn" data-product-id="3">
+                                        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Vintage Typography Tee</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <span class="text-muted">(32 reviews)</span>
+                                </div>
+                                <p class="price">₹899</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item hover-lift" data-category="tshirt" data-price="729">
+                        <div class="product-card glass-effect">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=300&h=300&fit=crop" 
+                                     alt="Abstract Art Tee" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-light quick-view-btn" data-product-id="4">
+                                        <i class="fas fa-eye me-1"></i>Quick View
+                                    </button>
+                                    <button class="btn btn-primary add-to-cart-btn" data-product-id="4">
+                                        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Abstract Art Tee</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                    <span class="text-muted">(15 reviews)</span>
+                                </div>
+                                <p class="price">₹729 <span class="original-price">₹899</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item hover-lift" data-category="tshirt" data-price="549">
+                        <div class="product-card glass-effect">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?w=300&h=300&fit=crop" 
+                                     alt="Nature Inspired Tee" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-light quick-view-btn" data-product-id="5">
+                                        <i class="fas fa-eye me-1"></i>Quick View
+                                    </button>
+                                    <button class="btn btn-primary add-to-cart-btn" data-product-id="5">
+                                        <i class="fas fa-cart-plus me-1"></i>Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Nature Inspired Tee</h5>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <span class="text-muted">(21 reviews)</span>
+                                </div>
+                                <p class="price">₹549</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kurtas Section -->
+                <div class="product-category-header mb-4">
+                    <h4 class="text-primary"><i class="fas fa-user-tie me-2"></i>Custom Kurtas</h4>
+                </div>
+                <div class="row product-grid">
+                    <div class="col-md-3 col-sm-6 mb-4 product-item" data-category="kurta" data-price="999">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1564257577154-75fd5ac5c4bb?w=300&h=300&fit=crop" 
+                                     alt="Royal Designer Kurta" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view-btn" data-product-id="6">Quick View</button>
+                                    <button class="btn btn-outline-primary add-to-cart-btn" data-product-id="6">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Royal Designer Kurta</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(28 reviews)</span>
+                                </div>
+                                <p class="price">₹999</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item" data-category="kurta" data-price="849">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1594736797933-d0804ba2fe65?w=300&h=300&fit=crop" 
+                                     alt="Traditional Print Kurta" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view-btn" data-product-id="7">Quick View</button>
+                                    <button class="btn btn-outline-primary add-to-cart-btn" data-product-id="7">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Traditional Print Kurta</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(19 reviews)</span>
+                                </div>
+                                <p class="price">₹849 <span class="original-price">₹1099</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item" data-category="kurta" data-price="699">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1566479179817-1976e6de2624?w=300&h=300&fit=crop" 
+                                     alt="Modern Fusion Kurta" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view-btn" data-product-id="8">Quick View</button>
+                                    <button class="btn btn-outline-primary add-to-cart-btn" data-product-id="8">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Modern Fusion Kurta</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(16 reviews)</span>
+                                </div>
+                                <p class="price">₹699</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item" data-category="kurta" data-price="769">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=300&h=300&fit=crop" 
+                                     alt="Ethnic Embroidered Kurta" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view-btn" data-product-id="9">Quick View</button>
+                                    <button class="btn btn-outline-primary add-to-cart-btn" data-product-id="9">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Ethnic Embroidered Kurta</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(35 reviews)</span>
+                                </div>
+                                <p class="price">₹769 <span class="original-price">₹949</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-sm-6 mb-4 product-item" data-category="kurta" data-price="579">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1615370480937-16d1b06c9c7e?w=300&h=300&fit=crop" 
+                                     alt="Casual Cotton Kurta" class="img-fluid">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary quick-view-btn" data-product-id="10">Quick View</button>
+                                    <button class="btn btn-outline-primary add-to-cart-btn" data-product-id="10">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h5>Casual Cotton Kurta</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(23 reviews)</span>
+                                </div>
+                                <p class="price">₹579</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- View All Button -->
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-eye me-2"></i>View All Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customization Section -->
+    <section id="customize" class="customize-section py-5" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="customize-content">
+                        <h2 class="section-title">Design Your <span class="text-gradient">Perfect Outfit</span></h2>
+                        <p class="section-subtitle">Our easy-to-use design tools help you create something truly unique</p>
+                        
+                        <div class="customize-features">
+                            <div class="feature-item d-flex align-items-center mb-3">
+                                <div class="feature-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Easy Design Tools</h5>
+                                    <p>Drag and drop interface with professional templates</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item d-flex align-items-center mb-3">
+                                <div class="feature-icon">
+                                    <i class="fas fa-upload"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Upload Your Art</h5>
+                                    <p>Bring your own designs to life on premium fabrics</p>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-item d-flex align-items-center mb-3">
+                                <div class="feature-icon">
+                                    <i class="fas fa-tshirt"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Live Preview</h5>
+                                    <p>See exactly how your design will look before ordering</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn btn-primary btn-lg">
+                            <i class="fas fa-magic me-2"></i>Start Designing
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="customize-demo">
+                        <div class="design-tool-preview">
+                            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop" 
+                                 alt="Design Preview" class="img-fluid">
+                            <div class="design-overlay">
+                                <div class="design-element element-1">Add Text</div>
+                                <div class="design-element element-2">🎨</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&h=400&fit=crop" alt="About Kritiya" class="img-fluid rounded">
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="section-title">Why Choose <span class="text-gradient">Kritiya?</span></h2>
+                        <p class="section-subtitle">We believe every young person deserves to express their unique personality through fashion</p>
+                        
+                        <div class="about-features">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="feature-box">
+                                        <i class="fas fa-shipping-fast"></i>
+                                        <h5>Fast Delivery</h5>
+                                        <p>2-3 days delivery across India</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="feature-box">
+                                        <i class="fas fa-award"></i>
+                                        <h5>Premium Quality</h5>
+                                        <p>100% cotton and finest materials</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="feature-box">
+                                        <i class="fas fa-undo"></i>
+                                        <h5>Easy Returns</h5>
+                                        <p>30-day hassle-free returns</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="feature-box">
+                                        <i class="fas fa-headset"></i>
+                                        <h5>24/7 Support</h5>
+                                        <p>Always here to help you</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Testimonials Carousel -->
+    <section class="testimonials-section py-5" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What <span class="text-gradient holographic">Customers Say</span></h2>
+                <p class="section-subtitle">Real stories from our happy Gen Z customers 💬</p>
+            </div>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" aria-label="Customer testimonials">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card glass-effect">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Aanya S." class="testimonial-img">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <blockquote>
+                                <p>Absolutely loved my custom tee! The quality is amazing and the design tool was so easy to use. Perfect fit and the colors are exactly as shown online. Will definitely order again! 🔥</p>
+                                <footer>— Aanya S., Bengaluru</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card glass-effect">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul M." class="testimonial-img">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <blockquote>
+                                <p>Got my kurta in just 2 days! The fit and fabric are perfect. The traditional design with modern twist is exactly what I was looking for. Highly recommended! ✨</p>
+                                <footer>— Rahul M., Mumbai</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-card glass-effect">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya K." class="testimonial-img">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <blockquote>
+                                <p>Kritiya's support team is super helpful! They made my custom order experience smooth and fun. The final product exceeded my expectations. Love the vibe! 💫</p>
+                                <footer>— Priya K., Delhi</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev" aria-label="Previous testimonial">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next" aria-label="Next testimonial">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+                <p class="section-subtitle">Have questions? We'd love to hear from you</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info mt-5">
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h5>Visit Us</h5>
+                            <p>Btm Layout 1st stage<br>Bengaluru, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <h5>Call Us</h5>
+                            <p>+91 91426 19991</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-3">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <h5>Email Us</h5>
+                            <p>kritiya.contact@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h4 class="mb-2">Stay in the loop!</h4>
+                    <p class="mb-0">Subscribe to our newsletter for exclusive offers, style tips, and new arrivals.</p>
+                </div>
+                <div class="col-lg-5">
+                    <form class="newsletter-form d-flex" autocomplete="off" aria-label="Newsletter signup">
+                        <input type="email" class="form-control me-2" placeholder="Enter your email" aria-label="Email address" required>
+                        <button type="submit" class="btn btn-primary ripple">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <h3><i class="fas fa-tshirt me-2"></i>Kritiya</h3>
+                        <p>Empowering young minds to express their creativity through custom fashion. Your style, your way.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#customize">Customize</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Categories</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Kurtas</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Sale</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Account</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">My Orders</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Kritiya. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with ❤️ for Gen Z</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Designer Modal - NEW -->
+    <div class="modal fade" id="aiDesignerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        <i class="fas fa-robot me-2"></i>AI Design Assistant
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="designPrompt" class="form-label">Describe your design idea:</label>
+                                <textarea class="form-control" id="designPrompt" rows="3" placeholder="E.g. A mountain landscape with sunset colors and flying birds"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Choose style:</label>
+                                <div class="style-options">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="style1" name="designStyle" value="realistic" checked>
+                                        <label class="form-check-label" for="style1">Realistic</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="style2" name="designStyle" value="cartoon">
+                                        <label class="form-check-label" for="style2">Cartoon</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="style3" name="designStyle" value="abstract">
+                                        <label class="form-check-label" for="style3">Abstract</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="style4" name="designStyle" value="minimalist">
+                                        <label class="form-check-label" for="style4">Minimalist</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="colorScheme" class="form-label">Color scheme preference:</label>
+                                <select class="form-select" id="colorScheme">
+                                    <option value="vibrant">Vibrant Colors</option>
+                                    <option value="pastel">Pastel Colors</option>
+                                    <option value="monochrome">Monochrome</option>
+                                    <option value="dark">Dark Tones</option>
+                                    <option value="light">Light Tones</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary generate-btn" id="generateDesign">
+                                <i class="fas fa-paint-brush me-2"></i>Generate Design
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="ai-generation-result">
+                                <div class="ai-result-placeholder text-center p-5">
+                                    <i class="fas fa-image fa-3x mb-3"></i>
+                                    <p>Your generated design will appear here</p>
+                                </div>
+                                <div class="ai-generated-image d-none">
+                                    <img src="" id="aiGeneratedImg" class="img-fluid" alt="AI Generated Design">
+                                </div>
+                                <div class="ai-result-actions mt-3 d-none">
+                                    <button class="btn btn-sm btn-outline-primary me-2">
+                                        <i class="fas fa-redo me-1"></i>Regenerate
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-success me-2">
+                                        <i class="fas fa-edit me-1"></i>Refine
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-dark">
+                                        <i class="fas fa-palette me-1"></i>Apply
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Chatbot - NEW -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-notification">1</span>
+        </div>
+        <div class="chatbot-popup">
+            <div class="chatbot-header">
+                <h5>Kritiya Assistant</h5>
+                <button class="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-body">
+                <div class="chatbot-messages">
+                    <div class="bot-message">
+                        <div class="bot-avatar">K</div>
+                        <div class="message-bubble">
+                            <p>Hi there! 👋 I'm the Kritiya assistant. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" placeholder="Type your message...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+                <div class="chatbot-suggestions">
+                    <span class="suggestion">How to customize</span>
+                    <span class="suggestion">Shipping info</span>
+                    <span class="suggestion">Return policy</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New section: Size Guide Modal -->
+    <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sizeGuideModalLabel">Size Guide</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Size</th>
+                                    <th>Chest (in)</th>
+                                    <th>Length (in)</th>
+                                    <th>Shoulder (in)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>S</td>
+                                    <td>38-40</td>
+                                    <td>27</td>
+                                    <td>17</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td>40-42</td>
+                                    <td>28</td>
+                                    <td>18</td>
+                                </tr>
+                                <tr>
+                                    <td>L</td>
+                                    <td>42-44</td>
+                                    <td>29</td>
+                                    <td>19</td>
+                                </tr>
+                                <tr>
+                                    <td>XL</td>
+                                    <td>44-46</td>
+                                    <td>30</td>
+                                    <td>20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="quickViewModalLabel">Product Quick View</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="aria-labelledby" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="quick-view-img-container">
+                                <img src="" alt="Product" class="img-fluid quick-view-img">
+                                <div class="image-zoom-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="product-details">
+                                <h3 class="product-title"></h3>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(24)</span>
+                                </div>
+                                <p class="product-price"></p>
+                                <div class="product-description mb-3"></div>
+                                
+                                <div class="product-options mb-3">
+                                    <h6>Available Colors:</h6>
+                                    <div class="color-options">
+                                        <!-- Will be populated by JS -->
+                                    </div>
+                                </div>
+                                
+                                <div class="product-options mb-3">
+                                    <h6>Select Size:</h6>
+                                    <div class="size-options">
+                                        <button class="size-btn" data-size="S">S</button>
+                                        <button class="size-btn active" data-size="M">M</button>
+                                        <button class="size-btn" data-size="L">L</button>
+                                        <button class="size-btn" data-size="XL">XL</button>
+                                    </div>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#sizeGuideModal" class="size-guide-link">Size Guide</a>
+                                </div>
+                                
+                                <div class="product-quantity mb-3">
+                                    <h6>Quantity:</h6>
+                                    <div class="quantity-selector">
+                                        <button class="qty-btn minus">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1" max="10">
+                                        <button class="qty-btn plus">+</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="product-actions">
+                                    <button class="btn btn-primary add-to-cart-modal">
+                                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                                    </button>
+                                    <button class="btn btn-outline-dark add-to-wishlist">
+                                        <i class="far fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel">
+                <i class="fas fa-shopping-bag me-2"></i>Your Cart
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="cart-items">
+                <!-- Will be populated by JS -->
+                <div class="empty-cart text-center py-5">
+                    <i class="fas fa-shopping-cart fa-3x mb-3"></i>
+                    <p>Your cart is empty</p>
+                    <a href="#products" class="btn btn-primary btn-sm" data-bs-dismiss="offcanvas">Start Shopping</a>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-footer p-3 border-top">
+            <div class="d-flex justify-content-between mb-3">
+                <span>Subtotal:</span>
+                <span class="cart-subtotal">₹0</span>
+            </div>
+            <button class="btn btn-primary w-100 checkout-btn" disabled>
+                Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-consent" id="cookieConsent">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <button class="btn btn-sm btn-light me-2 cookie-settings-btn">Cookie Settings</button>
+                    <button class="btn btn-sm btn-primary accept-cookies-btn">Accept All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating cart button with badge -->
+    <button class="floating-cart-btn" aria-label="Open shopping cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </button>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919142619991?text=Hi%20Kritiya!%20I'm%20interested%20in%20your%20custom%20clothing.%20Can%20you%20help%20me?" 
+       class="whatsapp-button" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts at the end for better performance -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fabric@5.3.0/dist/fabric.min.js"></script>
+    <script src="script.js" defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('ServiceWorker registered with scope:', registration.scope))
+                    .catch(error => console.log('ServiceWorker registration failed:', error));
+            });
+        }
+    </script>
+</body>
+</html>
