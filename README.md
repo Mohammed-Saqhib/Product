@@ -23,7 +23,7 @@ A modern, responsive e-commerce website showcasing custom T-shirts and Kurtas fo
 ## 🚀 Getting Started
 
 ### 🌐 Live Demo
-**[View Live Demo](https://mohammed-saqhib.github.io/Product/)**
+**[View Live Demo](https://mohammed-saqhib.github.io/kritya-fashion-demo-1/)**
 
 Experience the full website functionality at the live demo link above.
 
